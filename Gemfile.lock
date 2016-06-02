@@ -70,6 +70,9 @@ GEM
     nori (2.4.0)
     parser (2.3.1.1)
       ast (~> 2.2)
+    passenger (5.0.28)
+      rack
+      rake (>= 0.8.1)
     polyglot (0.3.5)
     powerpack (0.1.1)
     rack (1.5.5)
@@ -162,6 +165,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   mysql2
+  passenger
   rails (= 4.1.4)
   rubocop
   sass-rails (~> 4.0.3)
