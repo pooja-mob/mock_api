@@ -5,9 +5,9 @@ class UsersController < ApplicationController
       respond_to do |format|
       @user.uuid =  "1q2w3"
         if @user.save
-          format.json { render :json => ({code: 200, response: 'user exits'}) }
+          format.json { render :json => ({code: 200, response: 'user saved succesfully'}) }
         else
-          format.json { render :json => ({code: 201, response: 'user doesnot exits'})}
+          format.json { render :json => ({code: 201, response: 'user doesnot saved succesfully'})}
         end
       end
     end
