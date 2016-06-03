@@ -2,8 +2,9 @@
 
 default: &default
   adapter: mysql2
-  username: root
-  password: root
+  username: <%= ENV["USERNAME"] %>
+  password: <%= ENV["PASSWORD"] %>
+  host: <%= ENV["HOST"] %>
   pool: 5
   timeout: 5000
 
