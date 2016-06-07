@@ -4,6 +4,7 @@ class UsersController < ApplicationController
       @user = User.new(create_params)
       respond_to do |format|
       @user.uuid =  "1q2w3"
+      @user.otp = "1234"
         if @user.save
           format.json { render :json => ({code: 200, response: 'user saved succesfully'}) }
         else
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
     def verify
       @user = User.verify!(params[:uuid], params[:otp],params[:msisdn])
       respond_to do |format|
-        if @user.uuid == "1q2w3"
+        if (@user.uuid == "1q2w3" && @user.otp =="1234")
           format.json { render :json => ({code: 200, reason: 'success'}) }
         else
           format.json { render :json => ({code: 202, reason: 'failure'}) }

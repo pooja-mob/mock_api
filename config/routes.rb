@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   api_version(module: 'V1', path: { value: 'v1' }) do
-    resources :selfie_account, only: [] do
+    resources :selfiy_account, only: [] do
       collection do
         post 'user_status'
       end
@@ -13,7 +13,10 @@ Rails.application.routes.draw do
   end
     post 'users'              => 'users#create'
     post 'users/:uuid/verify' => 'users#verify'
-  
+    post 'selfie_account/user_status' => 'selfie_account#user_status'
+    post 'otps/(uuid)/verify' => 'otp#verify'
+    post 'accounts' => "accounts#check"
+    get 'transactions' => "transactions"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
