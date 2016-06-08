@@ -17,4 +17,8 @@
 *.pid.lock
 .env
 vendor/bundle
+config/*.yml
+
+
+
 
