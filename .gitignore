@@ -16,3 +16,5 @@
 /tmp
 *.pid.lock
 .env
+vendor/bundle
+
