@@ -3,7 +3,7 @@
   "environment": "production",
   // Run Passenger on the given port. In this example, we use port 80,
   // the standard HTTP port.
-  "port": 8080,
+  "port": 8080
   // Tell Passenger to daemonize into the background.
   
 }
