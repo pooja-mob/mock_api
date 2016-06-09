@@ -5,10 +5,10 @@ class OtpController < ApplicationController
 		code = params[:code]
         otp = Otp.verify!(params[:uuid],params[:msisdn],params[:code])
             respond_to do |format|
-        		if (uuid == "qwerty" && msisdn =="12345678") 
-          			format.json { render :json => ({code: 200, reason: 'success'}) }
-        		else
-          			format.json { render :json => ({code: 202, reason: 'failure'}) }
+        		if msisdn =="9987654321" 
+          			format.json { render :json => { status: 'success'}}
+          		else
+          			format.json { render :json => {status: 'failure'}}
         		end
       		end
 	end
