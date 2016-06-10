@@ -2,7 +2,7 @@ class SelfieAccountController < ApplicationController
   def user_status
     msisdn = params['msisdn']
     respond_to do |format|
-	    if msisdn == '9987654321'
+	    if (msisdn == '919987654321' || msisdn == '9987654321')
 	      format.json { render :json => {response: {user_status_code: '200', user_status_message: 'fedbook_user', uuid: '09062016120557-82968888710-1206429'},status_code: '200', status_message: 'fedbook_user' } }
 
 	    else
