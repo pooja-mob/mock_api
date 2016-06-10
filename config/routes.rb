@@ -17,6 +17,14 @@ Rails.application.routes.draw do
     post 'otps/:uuid/verify' => 'otp#verify'
     get 'accounts' => "accounts#check"
     get 'transactions' => "transactions"
+    post 'selfie_account/branches' => "selfie_account#branches"
+    post 'selfie_account/create' => "selfie_account#create"
+    post 'selfie_account/verify_otp' => "selfie_account#verify_otp"
+    post'selfie_account/upload_selfie' => "selfie_account#upload_selfie"
+    post 'selfie_account/upload_aadhaar' => "selfie_account#upload_aadhaar"
+    post 'selfie_account/upload_aadhaar_address'=> "selfie_account#upload_aadhaar_address"
+    post 'selfie_account/upload_pan_image' => "selfie_account#upload_pan_image"
+    post 'selfie_account/upload_pan_details' => "selfie_account#upload_pan_details"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
