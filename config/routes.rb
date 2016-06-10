@@ -14,8 +14,8 @@ Rails.application.routes.draw do
     post 'users'              => 'users#create'
     post 'users/:uuid/verify' => 'users#verify'
     post 'selfie_account/user_status' => 'selfie_account#user_status'
-    post 'otps/(uuid)/verify' => 'otp#verify'
-    post 'accounts' => "accounts#check"
+    post 'otps/:uuid/verify' => 'otp#verify'
+    get 'accounts' => "accounts#check"
     get 'transactions' => "transactions"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
