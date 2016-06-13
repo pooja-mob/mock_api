@@ -1,21 +1,31 @@
 class SelfieAccountController < ApplicationController
   def user_status
+    puts params.inspect
     msisdn = params['msisdn']
     respond_to do |format|
-	    if msisdn == '9987654321'
-	      format.json { render :json => {response: {user_status_code: 200, user_status_message: 'fedbook_user', uuid: '12343456789'},status_code: 200, status_message: 'fedbook_user' } }
+    a = ({response: {user_status_code: 200, user_status_message: 'fedbook_user', uuid: '12343456789'},status_code: 200, status_message: 'fedbook_user' }.to_json)
+    b = ({response: {user_status_code: 202, user_status_message: 'new_user', uuid: '1234'},status_code: 202, status_message: 'new_user' }.to_json)
 
+	    if (msisdn == '9987654321' || msisdn == '919987654321')
+            puts a.inspect
+            # puts b.inspect
+            format.json {render :json => "#{a}"}
+	      # format.json { render :json => {response: {user_status_code: 200, user_status_message: 'fedbook_user', uuid: '12343456789'},status_code: 200, status_message: 'fedbook_user' } }
 	    else
-	      format.json { render :json => {response: {user_status_code: 202, user_status_message: 'new_user', uuid: '1234'},status_code: 202, status_message: 'new_user' } }
+                        puts b.inspect
+
+             format.json {render :json => "#{b}"}
+	      # format.json { render :json => {response: {user_status_code: 202, user_status_message: 'new_user', uuid: '1234'},status_code: 202, status_message: 'new_user' } }
           # format.json { render :json => ({code_status: 500, status_message: 'error'}) }
         end
+     
     end
   end
    def branches
         respond_to do |format|
      	    
      	         # format.json {render :json => {status_code: '200', status_message: 'success'}}
-     	           format.json {render :json =>{status_code: 200,status_message: 'success',response: {status: 'success'}}}
+     	           format.json {render :json =>{status_code: 200,status_message: 'success',response: {BANGALORE: ['new location','new location']}}}
 
         	 # else
         		 # format.json {render :json => {status_code: '500', status_message: 'error'}}
