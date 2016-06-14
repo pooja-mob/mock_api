@@ -119,7 +119,7 @@ class SelfieAccountController < ApplicationController
     	respond_to do |format|
     		if uuid == "1234"
                  # format.json {render :json =>{status_code: '200',status_message: 'success',response: {status: 'success'}}}
-                 format.json {render :json =>    {status_code: 200,status_message: 'success',response:{message: 'Welcome to Federal-YOur Perfect Banking Partner! Your Account Number is 1234567890 \\n\\n Click OK to view your m-passbook FedBook using the pin :xxxx'}}}
+                 format.json {render :json =>    {status_code: 200,status_message: 'success',response:{message: 'Welcome to Federal-YOur Perfect Banking Partner! Your Account Number is 1234567890 \n  \n Click OK to view your m-passbook FedBook using the pin :xxxx'}}}
 
             else
             	 format.json {render :json => {status_code: 500, status_message: 'error'}}
