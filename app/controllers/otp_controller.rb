@@ -8,10 +8,10 @@ class OtpController < ApplicationController
             # respond_to do |format|
         		if code =="0000" 
           			# render :text =>  { status: 'success'}
-                render :json => {response: { user_status_message: 'success'},status_code: 200, status_message: 'fedbook_user' } 
+                render :json => {response: { status: 'success'},status_code: 200, status_message: 'fedbook_user' } 
 
           		else
-                render :json => {response: { user_status_message: 'failure'},status_code: 200, status_message: 'fedbook_user' } 
+                render :json => {response: { status: 'failure'},status_code: 200, status_message: 'fedbook_user' } 
         		end
       		# end
 	end
