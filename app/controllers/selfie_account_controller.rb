@@ -7,16 +7,17 @@ class SelfieAccountController < ApplicationController
     b = ({response: {user_status_code: 202, user_status_message: 'new_user', uuid: '1234'},status_code: 202, status_message: 'new_user' }.to_json)
 
 	    if (msisdn == '9987654321' || msisdn == '919987654321')
-            puts a.inspect
+            render :text => {status_code: 200,status_message:"success",request:{method:"user_register"},response:{status:"success",uuid:"eb6703bf-3fbf-4dbf-a396-5221a22df5ca",user_id:"9"},version:3}
+            # puts a.inspect
             # puts b.inspect
             # format.json
-             render :text => "#{a}"
+             # render :text => "#{a}"
 	      # format.json { render :json => {response: {user_status_code: 200, user_status_message: 'fedbook_user', uuid: '12343456789'},status_code: 200, status_message: 'fedbook_user' } }
 	    else
-                        puts b.inspect
+            # puts b.inspect
 
              # format.json 
-             render :text => "#{b}"
+             # render :text => "#{b}"
 	      # format.json { render :json => {response: {user_status_code: 202, user_status_message: 'new_user', uuid: '1234'},status_code: 202, status_message: 'new_user' } }
           # format.json { render :json => ({code_status: 500, status_message: 'error'}) }
         
